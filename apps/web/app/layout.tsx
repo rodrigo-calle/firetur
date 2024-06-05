@@ -1,4 +1,5 @@
 import "@repo/ui/styles.css";
+import PrelineScript from "@repo/ui/src/PrelineScript.tsx";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
@@ -17,6 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>{children}</body>
+      <PrelineScript />
     </html>
   );
 }
