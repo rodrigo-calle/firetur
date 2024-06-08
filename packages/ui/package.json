@@ -5,7 +5,8 @@
   "exports": {
     "./src/PrelineScript.tsx": "./src/PrelineScript.tsx",
     "./styles.css": "./styles.css",
-    "./src/BlockButton.tsx": "./src/BlockButton.tsx"
+    "./src/BlockButton.tsx": "./src/BlockButton.tsx",
+    "./src/MainBanner.tsx": "./src/MainBanner.tsx"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",
@@ -24,6 +25,7 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
+    "@preline/dropdown": "^2.3.0",
     "preline": "^2.3.0"
   }
 }
