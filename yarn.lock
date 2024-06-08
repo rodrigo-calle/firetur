@@ -443,6 +443,11 @@
   resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.11.8.tgz#6b79032e760a0899cd4204710beede972a3a185f"
   integrity sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==
 
+"@preline/dropdown@^2.3.0":
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/@preline/dropdown/-/dropdown-2.3.0.tgz#778c1c6899f0657841b6f170138da5eb9b3d2cee"
+  integrity sha512-tLcQS3Lzhmu7hW3XJVE2hSxe3b7pgtPtbKS3KanBOLTIDXu4XjFt45enolCYnsn64tOEsfhGnix/VNTo4kttyw==
+
 "@rushstack/eslint-patch@^1.3.3":
   version "1.10.3"
   resolved "https://registry.yarnpkg.com/@rushstack/eslint-patch/-/eslint-patch-1.10.3.tgz#391d528054f758f81e53210f1a1eebcf1a8b1d20"

@@ -1,4 +1,5 @@
 import "@repo/ui/styles.css";
+import MainNavBar from "@repo/ui/src/MainNavBar.tsx";
 import PrelineScript from "@repo/ui/src/PrelineScript.tsx";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -17,7 +18,10 @@ export default function RootLayout({
 }): JSX.Element {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <MainNavBar />
+        {children}
+      </body>
       <PrelineScript />
     </html>
   );
