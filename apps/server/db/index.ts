@@ -1,5 +1,7 @@
 import { DataSource } from "typeorm";
-import { Place } from "../api/places/entities";
+import { Place, PlaceImage } from "../api/places/entities";
+import { Business } from "../api/business/entities";
+import { Package } from "../api/packages/entities";
 
 const AppDataSource = new DataSource({
   type: "mysql",
@@ -8,7 +10,7 @@ const AppDataSource = new DataSource({
   username: "root",
   password: "123456",
   database: "firetur_dev",
-  entities: [Place],
+  entities: [Place, PlaceImage, Business, Package],
   synchronize: true,
   logging: false,
   charset: "utf8mb4",

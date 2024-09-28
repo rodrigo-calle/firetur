@@ -1,4 +1,10 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import {
+  Column,
+  Entity,
+  ManyToOne,
+  OneToMany,
+  PrimaryGeneratedColumn,
+} from "typeorm";
 
 @Entity()
 export class Place {
@@ -41,6 +47,25 @@ export class Place {
   })
   created_at!: Date;
 
-  @Column("integer")
-  business_id!: number;
+  @OneToMany(() => PlaceImage, (image) => image.place, {
+    cascade: true,
+  })
+  place_images!: PlaceImage[];
+}
+
+@Entity()
+export class PlaceImage {
+  @PrimaryGeneratedColumn()
+  id!: number;
+
+  @Column("varchar")
+  title!: string;
+
+  @Column("varchar")
+  image_url!: string;
+
+  @ManyToOne(() => Place, (place) => place.place_images, {
+    onDelete: "CASCADE",
+  })
+  place!: Place;
 }

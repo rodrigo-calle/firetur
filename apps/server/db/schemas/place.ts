@@ -9,7 +9,13 @@ export const placeSchema = z.object({
   country: z.string(),
   price: z.number(),
   created_at: z.date(),
-  business_id: z.number(),
+  place_images: z.array(
+    z.object({
+      title: z.string(),
+      image_url: z.string(),
+    })
+  ),
+  // business_id: z.number(),
 });
 
 export const placeCreateSchema = placeSchema.omit({
