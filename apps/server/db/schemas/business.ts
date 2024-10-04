@@ -5,6 +5,7 @@ export const businessSchema = z.object({
   title: z.string(),
   description: z.string(),
   created_at: z.date(),
+  users: z.array(z.number()).optional(),
 });
 
 export const businessCreateSchema = businessSchema.omit({

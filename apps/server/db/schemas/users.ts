@@ -18,6 +18,7 @@ export const userSchema = z.object({
   reset_password_token: z.string(),
   reset_password_expires: z.date(),
   role: userRolesSchema.default(UserRoles.CLIENT),
+  businesses: z.array(z.number()).optional(),
 });
 
 export const userCreateSchema = userSchema.omit({

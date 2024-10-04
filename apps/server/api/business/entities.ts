@@ -1,5 +1,13 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from "typeorm";
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  OneToMany,
+  ManyToMany,
+  JoinTable,
+} from "typeorm";
 import { Package as PackageEntity } from "../packages/entities";
+import { User } from "../users/entities";
 
 @Entity()
 export class Business {
@@ -21,4 +29,11 @@ export class Business {
 
   @OneToMany(() => PackageEntity, (packages) => packages.business)
   packages!: PackageEntity[];
+
+  // @ManyToMany(() => User, (user) => user.businesses)
+  // @JoinTable()
+  // users!: number[];
+
+  @ManyToMany(() => User, (user) => user.businesses)
+  users!: User[];
 }

@@ -1,5 +1,12 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  ManyToMany,
+  JoinTable,
+} from "typeorm";
 import { UserRoles } from "../../db/schemas/users";
+import { Business } from "../business/entities";
 
 @Entity()
 export class User {
@@ -53,4 +60,11 @@ export class User {
     default: UserRoles.CLIENT,
   })
   role!: string;
+
+  // @ManyToMany(() => Business, (business) => business.users)
+  // @JoinTable()
+  // businesses!: number[];
+  @ManyToMany(() => Business, (business) => business.users)
+  @JoinTable()  // @JoinTable() solo se coloca en uno de los lados de la relación
+  businesses!: Business[];
 }
